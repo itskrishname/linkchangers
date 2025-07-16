@@ -25,10 +25,11 @@ class Bot(Client):
         )
         self.LOGGER = LOGGER
 
-    async def start(self):
-        await super().start()
-        usr_bot_me = await self.get_me()
-        self.uptime = datetime.now()
+    async def start(self, *args, **kwargs):
+    await super().start(*args, **kwargs)
+    usr_bot_me = await self.get_me()
+    self.uptime = datetime.now()
+    # ...baaki ka code...
 
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info("Bot Running..!\n\nCreated by \nhttps://t.me/Okabe_xRintarou")
